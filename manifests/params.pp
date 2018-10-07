@@ -31,6 +31,16 @@ class strongswan::params {
       $charon_conf_dir     = '/etc/strongswan.d'
       $service             = 'strongswan'
     }
+    'ArchLinux': {
+      $package             = 'strongswan'
+      $ipsec_d_dir         = '/etc/ipsec.d'
+      $ipsec_conf          = '/etc/ipsec.conf'
+      $ipsec_secrets       = '/etc/ipsec.secrets'
+      $charon_conf         = '/etc/strongswan.d/charon.conf'
+      $charon_logging_conf = '/etc/strongswan.d/charon-logging.conf'
+      $charon_conf_dir     = '/etc/strongswan.d'
+      $service             = 'strongswan'
+    }
 
     default: {
       fail("${fact('osfamily')} is not supported.")
